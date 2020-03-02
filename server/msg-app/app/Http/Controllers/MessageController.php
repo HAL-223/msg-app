@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    public function show($msg)
+    public function show($name, $msg)
     {
-        return view('message.show', ['msg' => $msg]);
+        $date = ['name' => $name, 'msg' => $msg];
+        return view('message.show', $date);
     }
 }
